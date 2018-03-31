@@ -24,6 +24,6 @@ def make_app():
 if __name__ == "__main__":
     app = make_app()
     server = tornado.httpserver.HTTPServer(app)
-    port = 5000
+    port = int(os.environ.get("PORT", 5000))
     server.listen(port)
     tornado.ioloop.IOLoop.instance().start()
