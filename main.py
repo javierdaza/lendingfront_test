@@ -1,5 +1,6 @@
 import os
 
+import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 
@@ -22,5 +23,7 @@ def make_app():
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(8888)
-    tornado.ioloop.IOLoop.current().start()
+    server = tornado.httpserver.HTTPServer(app)
+    port = 5000
+    server.listen(port)
+    tornado.ioloop.IOLoop.instance().start()
