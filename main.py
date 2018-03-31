@@ -9,6 +9,8 @@ from controller import MainHandler, MyFormHandler
 settings = {
     "static_path": os.path.join(os.path.dirname(__file__), "static"),
     "debug": False,
+    "cookie_secret": str(os.urandom(45)),
+    "xsrf_cookies": True,
 }
 
 urls = [

@@ -31,6 +31,7 @@
 
 	<div class="jumbotron">
 		<form action="/" method="POST" ng-controller="FormController as vmForm" ng-submit="save()" novalidate>
+			{% module xsrf_form_html() %}
 			<div ng-switch="vmForm.step">
 				<div class="stepone" ng-switch-when="one">
 					<h3>Step 1 - Business Information</h3>	
